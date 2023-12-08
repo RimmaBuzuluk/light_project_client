@@ -1,0 +1,16 @@
+.home__name{
+    font-size: 50px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    margin: 20px 0 20px 0;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.home__addBut{
+    display: flex;
+    justify-content: end;
+}
+
+

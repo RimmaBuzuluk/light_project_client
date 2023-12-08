@@ -1,0 +1,34 @@
+.AdressItem{
+    /* background-color: coral; */
+    margin: 10px 0 10px 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border: 3px solid coral; 
+    border-radius: 50px;
+    padding: 0 20px 0 10px;
+
+    justify-content: space-between;
+}    
+
+
+.lightBlock{
+    width: 70px;
+    height: 45px;
+    border-radius: 50px;
+    font-size: 25px;
+    color: #fff;
+    border: 1px solid #000; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightFalse{
+    
+    background-color: red;
+}
+
+.lightTrue{
+    background-color: yellowgreen;
+}

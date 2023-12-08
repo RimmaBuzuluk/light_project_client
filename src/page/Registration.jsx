@@ -25,8 +25,8 @@ function Registration() {
             </div>
         </div>
         <div >
-            <button>зареєструватись</button>
-            <button>увійти</button>
+            <button className='button'>зареєструватись</button>
+            <button className='button lastButton'>увійти</button>
         </div>
         
     </div>

@@ -34,20 +34,20 @@
 
 }
 
-button{
+.button{
     width: 300px;
     height: 70px;
     border-radius: 50px;
     margin-left: 5px;
     margin-right: 5px;
     font-size: 30px;
-}
 
-button:not(:last-child){
     background-color: coral;
-    color: aliceblue;
+    color: #fff;
 }
 
-button:last-child{
-    background-color:#fff;
+.lastButton{
+    background-color: #fff;
+    color: #000;
 }
+
