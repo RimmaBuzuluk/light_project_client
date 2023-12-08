@@ -1,0 +1,19 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_menu{
+    display: flex;
+}
+
+.main_item{
+    font-size: 50px;
+    font-weight: 600;
+    color:coral;
+}
+
+.header_menu__item:not(:last-child){
+    margin-right: 50px;
+}
