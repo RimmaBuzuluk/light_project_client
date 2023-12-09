@@ -9,7 +9,7 @@ function Home() {
 
   const dispatch=useDispatch()
   const adress=useSelector(state=>state.adress.adress)
-  // console.log(adress.length)
+  console.log(adress)
 
   const addAdress=()=>{
     const newAdress={
@@ -31,7 +31,7 @@ function Home() {
         <div className='adressBlocks'>
           {adress.length>0 ? 
           <div>
-            {adress.map(adress=><AdressItem key={adress.id} adressInform={adress}/>)}
+            {adress.map(adressSingle=><AdressItem key={adressSingle.id_adress} adressInform={adressSingle}/>)}
           </div>
           :
           <div>Ви не маєте жодної адреси</div>}

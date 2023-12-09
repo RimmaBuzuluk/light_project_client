@@ -10,7 +10,7 @@ export const adressReducer=(state=defaultState, action)=>{
         case ADD_ADRESS:
             return {...state, adress:[...state.adress, action.payload]}
         case REMOVE_ADRESS: 
-            return{...state, adress:state.adress.filter(adress=>adress.id !==adress.payload)} 
+            return{...state, adress:state.adress.filter(adress=>adress.id_adress !==action.payload)} 
         default:
             return state 
     }
