@@ -1,5 +1,6 @@
 import React from 'react';
 import "../style/Login.css"
+import { Link } from 'react-router-dom';
 
 
 function Login() {
@@ -19,8 +20,8 @@ function Login() {
             </div>
         </div>
         <div >
-            <button className='button'>зареєструватись</button>
             <button className='button lastButton'>увійти</button>
+            <button className='button'><Link to="/registration">зареєструватись</Link></button>
         </div>
     </div>
   );

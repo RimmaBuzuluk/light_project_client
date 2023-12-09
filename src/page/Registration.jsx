@@ -1,5 +1,6 @@
 import React from 'react';
 import "../style/Registration.css"
+import { Link } from 'react-router-dom';
 
 
 function Registration() {
@@ -26,7 +27,7 @@ function Registration() {
         </div>
         <div >
             <button className='button'>зареєструватись</button>
-            <button className='button lastButton'>увійти</button>
+            <button className='button lastButton'><Link to="/login">увійти</Link></button>
         </div>
         
     </div>

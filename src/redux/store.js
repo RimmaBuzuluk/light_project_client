@@ -1,5 +1,5 @@
 import { applyMiddleware, combineReducers, configureStore } from "@reduxjs/toolkit"
-import {adressReducer} from "./adressReduser"
+import {adressReducer} from "./slice/adressReduser"
 import { composeWithDevTools } from "redux-devtools-extension"
 import thunk from "redux-thunk"
 
@@ -7,7 +7,7 @@ import thunk from "redux-thunk"
 
 
 const rootReducer=combineReducers({
-        adress:adressReducer,
+        adress:adressReducer
 })
 
 export const store= configureStore({

@@ -1,7 +1,7 @@
 import React from 'react';
 import "../style/AdressItem.css"
 import { useDispatch } from 'react-redux';
-import { removeAressAction } from '../store/adressReduser';
+import { removeAressAction } from '../redux/slice/adressReduser';
 
 
 function AdressItem({adressInform}) {
