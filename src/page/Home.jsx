@@ -15,7 +15,7 @@ function Home() {
 
   const isAdressLoading = adress.status==='loading'
   const adressItem=adress.items
-  console.log(adressItem.length)
+  
 
   React.useEffect(()=>{
     dispatch(fetchAdress())

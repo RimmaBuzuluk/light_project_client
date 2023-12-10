@@ -5,7 +5,7 @@ import { removeAressAction } from '../redux/slice/adressReduser';
 
 
 function AdressItem({adressInform}) {
-  console.log(adressInform)
+ 
     // const dispatch=useDispatch()
     // console.log(adressInform.adressInform.id_adress)//повертає всі адреси елементів які були створені, а не лише той шо творили зараз
     const { id_adress, adress_place, status } = adressInform;

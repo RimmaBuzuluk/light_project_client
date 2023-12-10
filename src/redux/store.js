@@ -2,12 +2,14 @@ import { applyMiddleware, combineReducers, configureStore } from "@reduxjs/toolk
 import {adressReducer} from "./slice/adressReduser"
 import { composeWithDevTools } from "redux-devtools-extension"
 import thunk from "redux-thunk"
+import { authReducer } from "./slice/authReduser"
 
 
 
 
 const rootReducer=combineReducers({
-        adress:adressReducer
+        adress:adressReducer,
+        auth:authReducer
 })
 
 export const store= configureStore({

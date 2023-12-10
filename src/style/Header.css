@@ -6,14 +6,23 @@
 
 .header_menu{
     display: flex;
+    align-items: center;
+
 }
 
 .main_item{
-    font-size: 50px;
+    font-size: 200%;
     font-weight: 600;
     color:coral;
 }
 
 .header_menu__item:not(:last-child){
     margin-right: 50px;
+}
+
+.buttExit{
+    width: 75px;
+    height: 25px;
+    border-radius: 50px;
+    margin-left: 20px;
 }
