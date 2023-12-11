@@ -8,7 +8,7 @@ import { fetchAuth, selectIsAuth } from '../redux/slice/authReduser';
 
 function Login() {
     const isAuth=useSelector(selectIsAuth)
-    console.log(isAuth)
+   
     const dispatch= useDispatch()
     const {register, handleSubmit, formState:{errors}} = useForm({
         defaultValues:{
@@ -19,9 +19,17 @@ function Login() {
         mode:'onChange'
     })
 
-    const onSubmit=(values)=>{
-        dispatch(fetchAuth(values))
+    const onSubmit=async(values)=>{
+        const data=await dispatch(fetchAuth(values))
+        if(!data.payload){
+            return alert('не вдалось авторизуватись')
+        }
+        if('token' in data.payload){
+            window.localStorage.setItem('token', data.payload.token)
+        }
     }
+
+
     if(isAuth){
         return <Navigate to="/"/>
     }
@@ -36,7 +44,7 @@ function Login() {
                 type='text' 
                 label="email"
                 {...register('email', {required:'Не вказана пошта'})}/>
-                {errors.email && <p>{errors.email.message}</p>}
+                {errors.email && <p style={{ color: "red", fontSize: '20px' }}>{errors.email.message}</p>}
             </div>
         </div>
         <div className='passwordBlock block'>

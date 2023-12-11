@@ -12,6 +12,7 @@ function Header() {
   const onClickLogout=()=>{
     if(window.confirm('Ви впевнені що хочете вийти?')){
       dispatch(logout())
+      window.localStorage.removeItem('token')
     }
   }
   return (

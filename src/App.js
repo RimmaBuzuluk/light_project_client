@@ -6,10 +6,17 @@ import { Container } from '@mui/material';
 import Home from './page/Home';
 import Registration from './page/Registration';
 import Login from './page/Login';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchAuthMe, selectIsAuth } from './redux/slice/authReduser';
 
 
 function App() {
-  
+  const dispatch=useDispatch()
+  const isAuth=useSelector(selectIsAuth)
+
+  React.useEffect(()=>{
+    dispatch(fetchAuthMe())
+  },[])
   return (
     
     <div className='App'>
