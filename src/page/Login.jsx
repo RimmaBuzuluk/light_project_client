@@ -8,8 +8,8 @@ import { fetchAuth, selectIsAuth } from '../redux/slice/authReduser';
 
 function Login() {
     const isAuth=useSelector(selectIsAuth)
-   
     const dispatch= useDispatch()
+    
     const {register, handleSubmit, formState:{errors}} = useForm({
         defaultValues:{
             email:'tetiana@gmail.com',
@@ -21,15 +21,18 @@ function Login() {
 
     const onSubmit=async(values)=>{
         const data=await dispatch(fetchAuth(values))
+        console.log(data)
         if(!data.payload){
             return alert('не вдалось авторизуватись')
         }
         if('token' in data.payload){
             window.localStorage.setItem('token', data.payload.token)
+        }else{
+            alert('не вдалось авторизуватись')
         }
     }
 
-
+   
     if(isAuth){
         return <Navigate to="/"/>
     }

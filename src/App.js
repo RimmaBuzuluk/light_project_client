@@ -7,7 +7,7 @@ import Home from './page/Home';
 import Registration from './page/Registration';
 import Login from './page/Login';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAuthMe, selectIsAuth } from './redux/slice/authReduser';
+import {  fetchAuthMe, selectIsAuth } from './redux/slice/authReduser';
 
 
 function App() {
@@ -17,7 +17,10 @@ function App() {
   React.useEffect(()=>{
     dispatch(fetchAuthMe())
   },[])
+
+
   return (
+  
     
     <div className='App'>
       <Router>

@@ -1,61 +1,70 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "../style/Home.css"
-import axios from '../axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAdress } from '../redux/slice/adressReduser';
-// import {addAressAction} from "../redux/slice/adressReduser"
 import AdressItem from '../component/AdressItem';
 import AdressItemSkeleton from '../skeleton/AdressItemSkeleton';
+import { fetchAuthMe } from '../redux/slice/authReduser';
+import HomeSkeleton from '../skeleton/HomeSkeleton';
 
 
 function Home() {
   const dispatch=useDispatch()
   const {adress}=useSelector(state=>state.adress)
-  // console.log(adress)
-
-  const isAdressLoading = adress.status==='loading'
-  const adressItem=adress.items
-  
+  const {data:userData, status:userStatus} = useSelector(state => state.auth);
 
   React.useEffect(()=>{
     dispatch(fetchAdress())
+    dispatch(fetchAuthMe())
   },[])
 
+  // console.log(adress)
+  // console.log(userData, userStatus)
 
-  // console.log(isAdressLoading, adress.status)
+  const isAdressLoading = adress.status==='loading'
+  const isUserLoading = userStatus==='loading'
 
-  // const addAdress=()=>{
-  //   const newAdress={
-  //     id_adress:Date.now(),
-  //     content_adress:"101.448.08.22",
-  //     adress_place:"Kramatorsk",
-  //     status:true,
-  //     user_id:123
+  if (isUserLoading){
+    return(<HomeSkeleton/>)
+  }
+
+
+  const adressItem=adress.items
+
+  // const userAdresses=()=>{
+  //   if(!isUserLoading){
+      // const userAdresses= adressItem.filter(
+      //       (adressItem)=>adressItem.userId ===userData.id
+      //     )
+      // return userAdresses    
   //   }
-  //   dispatch(addAressAction(newAdress))
   // }
+ 
+  const userAdresses= adressItem.filter(
+    (adressItem)=>adressItem.userId ===userData.id
+  )
+
+  console.log(userAdresses)
+
 
   return (
     <div className='home'>
-        <div className='home__name'>имя и фамилия</div>
+      
+      <div className='home__name'>{userData.name} {userData.surname}</div>
         <div className='home__addBut'>
-          <button className="buttonAdd button" 
-          // onClick={()=>addAdress() }
-          > 
-          add adress
+          <button className="buttonAdd button"> 
+          Add adress
           </button>
         </div>
         <div className='adressBlocks'>
-          {isAdressLoading ? <div><AdressItemSkeleton/></div>:
-          <div>
-            {adressItem.length>0 ? 
+          {isAdressLoading? <div><AdressItemSkeleton/></div>:
             <div>
-              {adressItem.map(adressSingle=><AdressItem key={adressSingle.id_adress} adressInform={adressSingle}/>)}
+              {userAdresses.length>0 ? <div>
+              {userAdresses.map(adressSingle=><AdressItem key={adressSingle.id_adress} adressInform={adressSingle}/>)}
+            </div>:<div>Ви не маєте жодної адреси</div>}
             </div>
-            :
-            <div>Ви не маєте жодної адреси</div>}</div>
           }
-        </div>
+        </div> 
     </div>
   );
 }

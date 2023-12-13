@@ -1,13 +1,13 @@
 import React from 'react';
 import "../style/Registration.css"
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { useForm } from 'react-hook-form';
-import { fetchAuth, fetchRegister, selectIsAuth } from '../redux/slice/authReduser';
+import { fetchRegister} from '../redux/slice/authReduser';
 
 
 function Registration() {
-    const isAuth=useSelector(selectIsAuth)
+   
    
     const dispatch= useDispatch()
     const {register, handleSubmit, formState:{errors}} = useForm({
