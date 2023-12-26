@@ -6,6 +6,11 @@ export const fetchAdress=createAsyncThunk('adress/fetchAdress', async()=>{
     return data
 })
 
+export const addNewAdress=createAsyncThunk('adress/addNewAdress',async(params)=>{
+    const {data}=await axios.post('/adress/',params)
+    return data
+})
+
 
 const initialState={
     adress:{
@@ -28,6 +33,17 @@ const adressSlice=createSlice({
                 state.adress.status = 'loaded';
             })
             .addCase(fetchAdress.rejected, (state) => {
+                state.adress.items = [];
+                state.adress.status = 'error';
+            })
+            .addCase(addNewAdress.pending, (state) => {
+                state.adress.status = 'loading';
+            })
+            .addCase(addNewAdress.fulfilled, (state, action) => {
+                state.adress.items = action.payload;
+                state.adress.status = 'loaded';
+            })
+            .addCase(addNewAdress.rejected, (state) => {
                 state.adress.items = [];
                 state.adress.status = 'error';
             });

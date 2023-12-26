@@ -1,15 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import "../style/Home.css"
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAdress } from '../redux/slice/adressReduser';
 import AdressItem from '../component/AdressItem';
 import AdressItemSkeleton from '../skeleton/AdressItemSkeleton';
-import { fetchAuthMe } from '../redux/slice/authReduser';
+import { fetchAuthMe, selectIsAuth } from '../redux/slice/authReduser';
 import HomeSkeleton from '../skeleton/HomeSkeleton';
+import AddAdressForm from '../component/AddAdressForm';
+import Registration from './Registration';
 
 
 function Home() {
   const dispatch=useDispatch()
+  const [formAdd, setFormAdd] = React.useState(true);
   const {adress}=useSelector(state=>state.adress)
   const {data:userData, status:userStatus} = useSelector(state => state.auth);
 
@@ -18,8 +21,12 @@ function Home() {
     dispatch(fetchAuthMe())
   },[])
 
-  // console.log(adress)
-  // console.log(userData, userStatus)
+  const isAuth=useSelector(selectIsAuth)
+  console.log(isAuth)
+  if(!isAuth){
+    return(<Registration/>)
+  }
+
 
   const isAdressLoading = adress.status==='loading'
   const isUserLoading = userStatus==='loading'
@@ -28,34 +35,27 @@ function Home() {
     return(<HomeSkeleton/>)
   }
 
-
   const adressItem=adress.items
-
-  // const userAdresses=()=>{
-  //   if(!isUserLoading){
-      // const userAdresses= adressItem.filter(
-      //       (adressItem)=>adressItem.userId ===userData.id
-      //     )
-      // return userAdresses    
-  //   }
-  // }
  
   const userAdresses= adressItem.filter(
     (adressItem)=>adressItem.userId ===userData.id
   )
 
-  console.log(userAdresses)
+  const handeleAddAdress = () => {
+    
+    setFormAdd(!formAdd); 
+  };
 
 
   return (
     <div className='home'>
-      
       <div className='home__name'>{userData.name} {userData.surname}</div>
         <div className='home__addBut'>
-          <button className="buttonAdd button"> 
+          <button className="buttonAdd button" onClick={handeleAddAdress}> 
           Add adress
           </button>
         </div>
+        {/* {formAdd? <div className='formAddAdress'><AddAdressForm/></div>:<div></div>} */}
         <div className='adressBlocks'>
           {isAdressLoading? <div><AdressItemSkeleton/></div>:
             <div>
