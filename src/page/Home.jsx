@@ -55,7 +55,7 @@ function Home() {
           Add adress
           </button>
         </div>
-        {/* {formAdd? <div className='formAddAdress'><AddAdressForm/></div>:<div></div>} */}
+        {formAdd? <div className='formAddAdress'><AddAdressForm/></div>:<div></div>}
         <div className='adressBlocks'>
           {isAdressLoading? <div><AdressItemSkeleton/></div>:
             <div>
