@@ -1,22 +1,20 @@
 import React from 'react';
 import "../style/Registration.css"
-import { Link } from 'react-router-dom';
-import { useDispatch} from 'react-redux';
+import { Link, Navigate } from 'react-router-dom';
+import { useDispatch, useSelector} from 'react-redux';
 import { useForm } from 'react-hook-form';
-import { fetchRegister} from '../redux/slice/authReduser';
+import { fetchRegister, selectIsAuth} from '../redux/slice/authReduser';
 
 
 function Registration() {
    
-   
+   const isAuth = useSelector(selectIsAuth)
     const dispatch= useDispatch()
     const {register, handleSubmit, formState:{errors}} = useForm({
         defaultValues:{
-            surname:'Pupkin',
-            name:'Vasya',
-            city:'Kramatorsk',
-            email:'vasya@gmail.com',
-            password:'1234567',
+            fullName:'Tetiana Grafova',
+            email:'grafova@gmail.com',
+            password:'12345',
 
         },
         mode:'onChange'
@@ -25,47 +23,34 @@ function Registration() {
     const onSubmit=async(values)=>{
         const data=await dispatch(fetchRegister(values))
         if(!data.payload){
-            return alert('не вдалось зареєструватись')
+            return alert('не вдалось авторизуватись')
         }
         if('token' in data.payload){
             window.localStorage.setItem('token', data.payload.token)
         }
     }
 
+    console.log(isAuth)
+   
+    if(isAuth){
+        return <Navigate to="/"/>
+    }
+
   return (
     <div className='registration'>
         <div>Реєстрація</div>
         <form onSubmit={handleSubmit(onSubmit)}>
-        <div className='emailBlock block'>
-            <div className='emailText text'>Surmane</div>
-            <div>
-                <input
-                type='text' 
-                label="surname"
-                {...register('surname', {required:'Не вказане призвище'})}/>
-                {errors.surname && <p style={{ color: "red", fontSize: '20px' }}>{errors.surname.message}</p>}
-            </div>
-        </div>
+        
         <div className='emailBlock block'>
             <div className='emailText text'>Name</div>
             <div>
                 <input
                 type='text' 
                 label="name"
-                {...register('name', {required:'Не вказане ім я'})}/>
-                {errors.name && <p style={{ color: "red", fontSize: '20px' }}>{errors.name.message}</p>}
+                {...register('fullName', {required:'Не вказане ім я'})}/>
+                {errors.fullName && <p style={{ color: "red", fontSize: '20px' }}>{errors.fullName.message}</p>}
             </div>
-        </div>
-        <div className='emailBlock block'>
-            <div className='emailText text'>City</div>
-            <div>
-                <input
-                type='text' 
-                label="city"
-                {...register('city', {required:'Не вказана пошта'})}/>
-                {errors.city && <p style={{ color: "red", fontSize: '20px' }}>{errors.city.message}</p>}
-            </div>
-        </div>    
+        </div>  
         <div className='emailBlock block'>
             <div className='emailText text'>Email</div>
             <div>

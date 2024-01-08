@@ -33,12 +33,29 @@
     align-items: end;
     margin-top: 20px;
     margin-right: 10px;
+    justify-content: center;
+    height: 50px;
+    font-size: 15px;
 }
 
 input{
     display: block;
     width:600px;
     margin-top: 20px;
-    height: 20px;
-    
+    height: 50px;
+    font-size: 20px;
+    border-radius: 50px;
+    padding-left: 10px;
+}
+
+.buttonAddAdress{
+    margin-top: 20px;
+
+    width: 300px;
+    height: 70px;
+    border-radius: 50px;
+    font-size: 30px;
+
+    background-color: coral;
+    color: #fff;
 }

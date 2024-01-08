@@ -8,7 +8,7 @@ import { authReducer } from "./slice/authReduser"
 
 
 const rootReducer=combineReducers({
-        adress:adressReducer,
+        // adress:adressReducer,
         auth:authReducer
 })
 

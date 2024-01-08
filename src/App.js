@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from './page/Header';
 import "./style/App.css"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -14,7 +14,7 @@ function App() {
   const dispatch=useDispatch()
   const isAuth=useSelector(selectIsAuth)
 
-  React.useEffect(()=>{
+  useEffect(()=>{
     dispatch(fetchAuthMe())
   },[])
 

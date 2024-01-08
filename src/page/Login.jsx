@@ -12,26 +12,24 @@ function Login() {
     
     const {register, handleSubmit, formState:{errors}} = useForm({
         defaultValues:{
-            email:'tetiana@gmail.com',
-            password:'1234567',
+            email:'buzuluk@gmail.com',
+            password:'12345',
 
         },
         mode:'onChange'
     })
 
-    const onSubmit=async(values)=>{
-        const data=await dispatch(fetchAuth(values))
-        console.log(data)
-        if(!data.payload){
-            return alert('не вдалось авторизуватись')
+    const onSubmit = async (values) => {
+        const data = await dispatch(fetchAuth(values));
+        console.log(data);
+        if (!data.payload) {
+          return alert('не вдалось авторизуватись');
+        } else if ('token' in data.payload) {
+          window.localStorage.setItem('token', data.payload.token);
         }
-        if('token' in data.payload){
-            window.localStorage.setItem('token', data.payload.token)
-        }else{
-            alert('не вдалось авторизуватись')
-        }
-    }
+      };
 
+    console.log(isAuth)
    
     if(isAuth){
         return <Navigate to="/"/>

@@ -27,11 +27,11 @@ function Header() {
         </div>
         {isAuth? 
         <div>
-          <button className='buttExit' onClick={()=>onClickLogout()}>Вийти</button>
+          <button className='buttExit'  onClick={()=>onClickLogout()}>Вийти</button>
         </div>
-        :
-        <Link to="/registration">зарееструватися</Link>
-        }
+        : 
+        <Link to="/registration">зарееструватися</Link> 
+        } 
     </div>
   );
 }
