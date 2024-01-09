@@ -6,12 +6,14 @@ import HomeSkeleton from '../skeleton/HomeSkeleton';
 import { selectIsAuth } from '../redux/slice/authReduser';
 import AdressItem from '../component/AdressItem';
 import AdressItemSkeleton from '../skeleton/AdressItemSkeleton';
+import AddAdressForm from '../component/AddAdressForm';
 
 
 function Home() {
   const dispatch=useDispatch()
   const {data:userData, status:userStatus} = useSelector(state => state.auth);
   const addressData = useSelector(state => state.address);
+  const [addressForm, setAddressForm]=useState(false)
 
   useEffect(()=>{
     dispatch(fetchAddress())
@@ -25,13 +27,18 @@ function Home() {
     return(<HomeSkeleton/>)
   }
 
+  const onSubmit=()=>{
+    console.log(addressForm)
+    setAddressForm(!addressForm)
+  }
+
   return (
     <div className='home'>
       <div className='home__name'>{userData.fullName}</div>
         <div className='home__addBut'>
-          <button className="buttonAdd button">Add address</button>
+          <button onClick={onSubmit} className="buttonAdd button">Add address</button>
         </div>
-        {/* {isAdressLoading? <div className='formAddAdress'><AddAdressForm/></div>:<div></div>} */}
+        {addressForm ? <div className='formAddAdress'><AddAdressForm onSubmit={onSubmit}/></div>:<div></div>}
         <div className='adressBlocks'>
           {isAdressLoading? <div><AdressItemSkeleton/></div>:
             <div>

@@ -1,71 +1,56 @@
-// import React, { useEffect, useState } from 'react';
-// import "../style/AddAdressForm.css";
-// import { useSelector } from 'react-redux';
-// import { selectIsAuth } from '../redux/slice/authReduser';
-// import axios from '../axios';
-// import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import "../style/AddAdressForm.css";
+import { useSelector } from 'react-redux';
+import { selectIsAuth } from '../redux/slice/authReduser';
+import axios from '../axios';
 
-// function AddAdressForm() {
-//     const isAuth=useSelector(selectIsAuth)
-//     const navigate = useNavigate();
-//     const [content_adress, setContentAdress] = useState(""); // Поміняв назву стейту на setContentAdress
-//     const [adress_place, setAdressPlace] = useState("");
-//     const [token, setToken]=useState("")
 
-//     useEffect(()=>{
-//         const userToken=localStorage.getItem('token')
-//         if(userToken){
-//             setToken(userToken)
-//         }
-//     },[])
 
-//     const onSubmit = async (e) => {
-//         try{
-//             if(!token){
-//                 console.log("користувач не авторизований")
-//                 return;
-//             }
+function AddAdressForm({onSubmit}) {
+    const isAuth=useSelector(selectIsAuth)
+    const [address, setAddress] = useState(""); // Поміняв назву стейту на setContentAdress
+    const [addressPlace, setAddressPlace] = useState("");
+    const [isLoading, setIsLoading]=useState(false)
+    const [city, setCity]=useState("")
 
-//             console.log(token)
 
-//             const response = await axios.post('/adress', {
-//                 content_adress: content_adress,
-//                 adress_place: adress_place,
-//               }, {
-//                 headers: {
-//                   Authorization: `Bearer ${token}`,
-//                   'Content-Type': 'application/json',
-//                 },
+    const onSubmitAdd=async()=>{
+        try{
+            setIsLoading(true)
+            const addressParam={
+                address,
+                addressPlace,
+                city
+            }
 
-//               });
-//               //Обробка успішної відповіді від сервера (якщо потрібно)
-//                 console.log('Address created:', response.data);
+            const {data}=await axios.post(`/address`,addressParam)
+            onSubmit()
+        }catch(err){
+            console.warn(err)
+            alert('Помилка при створенні адреси')
+        }
+    }
 
-//                 // Скидання форми після успішного створення адреси
-//                 setContentAdress('');
-//                 setAdressPlace('');
+    return (
+        <div className='addAdressForm'>
+            <div className="addAdressFormTitle">Add new address</div>
+            <div className="input_block">
+                <div className="input_adress">
+                    <div className="title_input_adress title_adress">Address</div>
+                    <input type="text" value={address} name="address" onChange={(e) => setAddress(e.target.value)} />
+                </div>
+                <div className="input_adress" >
+                    <div className="title_input_adress_place title_adress">Address place</div>
+                    <input type="text" value={addressPlace} name="addressPlace" onChange={(e) => setAddressPlace(e.target.value)} />
+                </div>
+                <div className="input_adress" >
+                    <div className="title_input_adress_place title_adress">City</div>
+                    <input type="text" value={city} name="city" onChange={(e) => setCity(e.target.value)} />
+                </div>
+            </div>
+            <button className='buttonAddAdress' onClick={onSubmitAdd}>Add New Address</button>
+        </div>
+    );
+}
 
-//         }catch(err){
-//             console.error("error",err)
-//         }
-//     };
-   
-//     return (
-//         <div className='addAdressForm'>
-//             <div className="addAdressFormTitle">Add new address</div>
-//             <div className="input_block">
-//                 <div className="input_adress">
-//                     <div className="title_input_adress title_adress">Address</div>
-//                     <input type="text" value={content_adress} name="content_adress" onChange={(e) => setContentAdress(e.target.value)} />
-//                 </div>
-//                 <div className="input_adress" >
-//                     <div className="title_input_adress_place title_adress">Address place</div>
-//                     <input type="text" value={adress_place} name="adress_place" onChange={(e) => setAdressPlace(e.target.value)} />
-//                 </div>
-//             </div>
-//             <button className='buttonAddAdress' onClick={onSubmit}>Add New Address</button>
-//         </div>
-//     );
-// }
-
-// export default AddAdressForm;
+export default AddAdressForm;
