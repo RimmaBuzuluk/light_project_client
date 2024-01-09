@@ -5,8 +5,6 @@
 }
 
 .AdressItem{
-    /* background-color: coral; */
-    
     height: 50px;
     display: flex;
     align-items: center;
@@ -40,7 +38,7 @@
 }
 
 
-.beleteBut{
+.deleteBut{
     height: 50px;
     width: 50px;
     margin-left: 10px;
@@ -48,6 +46,41 @@
     background-color: #fff;
 }
 
-.beleteBut img{
+.deleteBut img{
     width: 20px;
+}
+
+@media (max-width:768px){
+    .lightBlock{
+        height: 35px;
+        font-size: 20px;
+    }
+
+    .AdressItem{
+        height: 40px;
+    }
+    .deleteBut{
+        height: 40px;
+        width: 40px;
+    }
+}
+
+@media (max-width:480px){
+    .lightBlock{
+        height: 25px;
+        width: 50px;
+        font-size: 20px;
+    }
+
+    .AdressItem{
+        height: 30px;
+    }
+    .deleteBut{
+        height: 30px;
+        width: 30px;
+        margin-left: 10px;
+    }
+    .deleteBut img{
+        width: 15px;
+    }
 }

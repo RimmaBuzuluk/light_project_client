@@ -1,29 +1,33 @@
 .addAdressForm{
     background-color: #fff;
-    width: 90%;
-    height: 500px;
-    border-radius: 50px;
     border: 1px solid #000;
+    border-radius: 50px;
+    
+    
+    width: 1000px;
+    height: 500px;
     margin-top: 20px;
-    position: absolute;
 
+
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.addAdressFormTitle{
+ .addAdressFormTitle{
     font-size: 20px;
     margin-top: 10px;
 }
 
 .input_block{
     display: block;
-    margin-top: 15%;
+    margin-top: 20px;
 }
 
 .input_adress{
     display: flex;
+    align-items: center;
 }
 
 .title_adress{
@@ -58,4 +62,59 @@ input{
 
     background-color: coral;
     color: #fff;
+} 
+
+
+@media (max-width:1200px){
+    .addAdressForm{
+        width: 900px;
+        height: 400px;
+    }
+}
+
+@media (max-width:992px){
+    .addAdressForm{
+        width: 750px;
+        height: 400px;
+    }
+}
+
+@media (max-width:768px){
+    .addAdressForm{
+        width: 450px;
+        height: 350px;
+    }
+    input{
+        width:300px;
+        height: 30px;
+        font-size: 20px;
+        border-radius: 50px;
+        padding-left: 10px;
+    }
+    .buttonAddAdress{
+        margin-top: 15px;
+        width: 200px;
+        height: 50px;
+        font-size: 20px;
+    } 
+}
+
+@media (max-width:480px){
+    .addAdressForm{
+        width: 300px;
+        height: 370px;
+    }
+    input{
+        width:150px;
+        height: 25px;
+        font-size: 20px;
+        border-radius: 50px;
+        padding-left: 10px;
+    }
+    .buttonAddAdress{
+        margin-top: 10px;
+        width: 200px;
+        height: 50px;
+        font-size: 20px;
+    } 
 }

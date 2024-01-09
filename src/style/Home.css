@@ -7,6 +7,7 @@
     height: 50px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .home__addBut{
@@ -18,8 +19,30 @@
 .formAddAdress{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    
+    align-items: center; 
+}
+
+@media (max-width:1200px){
+    .home__name{
+        width: 40%;
+        height: 50px;
+        font-size: 150%;
+    }
+}
+
+@media (max-width:768px){
+    .home__name{
+        width: 30%;
+        font-size:120%;
+    }
+}
+
+@media (max-width:480px){
+    .home__name{
+        width: auto;
+        font-size:70%;
+        height: 20px;
+    }
 }
 
 
