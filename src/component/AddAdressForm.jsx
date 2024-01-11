@@ -1,17 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import "../style/AddAdressForm.css";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectIsAuth } from '../redux/slice/authReduser';
 import axios from '../axios';
+import { InputLabel, MenuItem, Select } from '@mui/material';
+import { fetchCity } from '../redux/slice/cityReduser';
+import { FixedSizeList as List } from 'react-window';
 
 
 
 function AddAdressForm({onSubmit}) {
+    const dispatch=useDispatch()
     const isAuth=useSelector(selectIsAuth)
     const [address, setAddress] = useState(""); // Поміняв назву стейту на setContentAdress
     const [addressPlace, setAddressPlace] = useState("");
     const [isLoading, setIsLoading]=useState(false)
-    const [city, setCity]=useState("")
+    const [selectedCity, setSelectedCity]=useState("")
+
+    const {items:CityData, status:CityStatus} = useSelector(state => state.city);
+
+    useEffect(()=>{
+        dispatch(fetchCity())
+      },[])
+
+    const isCityLoading = CityStatus.status==='loading'
+
+    // const city=CityData[0].name
+    // console.log('CityData:', city);//чернигів
+
 
 
     const onSubmitAdd=async()=>{
@@ -20,7 +36,7 @@ function AddAdressForm({onSubmit}) {
             const addressParam={
                 address,
                 addressPlace,
-                city
+                city: selectedCity
             }
 
             const {data}=await axios.post(`/address`,addressParam)
@@ -30,6 +46,8 @@ function AddAdressForm({onSubmit}) {
             alert('Помилка при створенні адреси')
         }
     }
+
+    
 
     return (
         <div className='addAdressForm'>
@@ -44,8 +62,30 @@ function AddAdressForm({onSubmit}) {
                     <input type="text" value={addressPlace} name="addressPlace" onChange={(e) => setAddressPlace(e.target.value)} />
                 </div>
                 <div className="input_adress" >
-                    <div className="title_input_adress_place title_adress">City</div>
-                    <input type="text" value={city} name="city" onChange={(e) => setCity(e.target.value)} />
+                    <InputLabel className="title_input_adress_place title_adress">City</InputLabel>
+                    <Select type="text" value={selectedCity} name="city" onChange={(e) => setSelectedCity(e.target.value)}>
+                    {/* Відображення елементів списку міст */}
+                    {isCityLoading
+                        ? <div>Завантаження...</div>
+                        : (
+                            CityData
+                       ?
+                          <List
+                            height={200}
+                            itemCount={CityData.length}
+                            itemSize={35}
+                            width={300}
+                          >
+                            {({ index, style }) => (
+                                        <MenuItem key={CityData[index]._id} value={CityData[index].name} style={style}>
+                                            {CityData[index].name}
+                                        </MenuItem>
+                                    )}
+                          </List>
+                       :
+                       <div>no</div>
+                        )}
+                    </Select>
                 </div>
             </div>
             <button className='buttonAddAdress' onClick={onSubmitAdd}>Add New Address</button>
