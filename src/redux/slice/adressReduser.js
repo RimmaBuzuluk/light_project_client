@@ -10,11 +10,9 @@ export const fetchAddress = createAsyncThunk('address/fetchAddress', async () =>
     }
 });
 
-
 export const fetchRemoveAddress = createAsyncThunk('address/fetchRemoveAddress', async (id) => {
     await axios.delete(`/address/${id}`);    
 });
-
 
 const initialState={
     items:[],

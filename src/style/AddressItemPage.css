@@ -1,0 +1,10 @@
+.AddressItemPage{
+    display: flex;
+    margin-top: 2%;
+}
+
+.AddressItemPage_addressInform{
+    width: 75%;
+    background-color: turquoise;
+    font-size: 20px;
+}

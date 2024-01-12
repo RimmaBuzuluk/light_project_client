@@ -23,7 +23,7 @@ function SerchCity({ onSelectCity}) {
     const handleSelectCity = (cityName) => {
         console.log(cityName)
         setFilterText(cityName)
-        onSelectCity(filterText)
+        onSelectCity(cityName)
         
     };
 
