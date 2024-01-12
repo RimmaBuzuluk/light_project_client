@@ -1,0 +1,17 @@
+.listCity{
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+}
+
+.title_adress{
+    background-color: violet;
+}
+
+.input_adress{
+    background-color: aqua;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: end;
+    align-items: baseline;
+}

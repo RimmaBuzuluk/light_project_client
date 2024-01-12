@@ -64,6 +64,22 @@ input{
     color: #fff;
 } 
 
+.selectedCity{
+    width: 100%;
+    margin-top: 10px;
+    height: 50px;
+
+}
+
+.citiesList{
+    width: 200px;
+    background-color: yellow;
+}
+
+.cityList{
+    background-color: yellowgreen;
+    color: violet;
+}
 
 @media (max-width:1200px){
     .addAdressForm{
