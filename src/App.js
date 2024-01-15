@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {  fetchAuthMe, selectIsAuth } from './redux/slice/authReduser';
 import AddressItem from './page/AddressItemPage';
 import AddressItemPage from './page/AddressItemPage';
+import Statistics from './page/Statistics';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
             <Route path='/registration' element={<Registration />} />
             <Route path='/login' element={<Login />} />
             <Route path='/address/:id' element={<AddressItemPage />} />
+            <Route path='/statistics' element={<Statistics/>} />
           </Routes>
         </Container>
       </Router>

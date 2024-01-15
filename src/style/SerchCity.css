@@ -1,17 +1,76 @@
-.listCity{
+/* .SerchCity{
     background-color: yellow;
     display: flex;
-    justify-content: center;
+    justify-content: end;
+}
+.listCity{
+
+    border-radius: 50px;
+    margin-top: 15px;
+    border: 1.5px solid #000;
+
+} */
+/* button{
+    background-color: #fff;
+    border: none;
 }
 
-.title_adress{
-    background-color: violet;
+.title_input_adress_place{
+    background-color: aquamarine;
+    height: auto;
+    
 }
 
-.input_adress{
-    background-color: aqua;
-    margin-bottom: 10px;
+@media (max-width:768px){
+    
+} */
+
+.SerchCity{
+    display: flex;
+}
+
+.title_input_adress_place{
+    width: 100px;
     display: flex;
     justify-content: end;
-    align-items: baseline;
+    align-items: center;
+    margin-right: 10px;
+    margin-top: 20px;
+    height: 50px;
+}
+
+.listCity{
+
+    border-radius: 50px;
+    margin-top: 15px;
+    border: 1.5px solid #000;
+
+}
+.buttonCity{
+    width: 150px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #fff;
+    border: none;
+}
+
+@media (max-width:480px){
+    .SerchCity{
+        width: 250px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .title_input_adress_place{
+        width: 75px;
+        height: 12px;
+        font-size: 12px;
+    }
+    .listCity{
+        width: 100px;
+
+    }
 }

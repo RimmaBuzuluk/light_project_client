@@ -20,10 +20,10 @@ function Header() {
     <div className='header'>
         <Link to="/" className='main_item'>Light in your home</Link>
         <div className='header_menu'>
-            <div className='header_menu__item'>Home</div>
-            <div className='header_menu__item'>Home1</div>
-            <div className='header_menu__item'>Home2</div>
-            <div className='header_menu__item'>Home3</div>
+            <Link to="/statistics" className='header_menu__item'>Статистика</Link>
+            <Link className='header_menu__item'>Відгуки</Link>
+            <Link className='header_menu__item'>Статистіка</Link>
+            <Link className='header_menu__item'>Home3</Link>
         </div>
         {isAuth? 
         <div>

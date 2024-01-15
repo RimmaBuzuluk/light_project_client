@@ -28,8 +28,8 @@ function SerchCity({ onSelectCity}) {
     };
 
     return (
-        <div className='SerchCity input_adress'>  
-            <div className="title_input_adress_place title_adress">City</div>
+        <div className='SerchCity'>  
+            <div className="title_input_adress_place">City</div>
             <div>
                 <input type="text" value={filterText} name="addressPlace" onChange={(e) => setFilterText(e.target.value)} />
                 {isCityLoading
@@ -40,10 +40,11 @@ function SerchCity({ onSelectCity}) {
                         height={200}
                         itemCount={filteredCities.length}
                         itemSize={35}
-                        width={300}
+                        width={150}
+                        className='listCity'
                     >
                         {({ index, style }) => (
-                            <button onClick={() => handleSelectCity(filteredCities[index].name)} key={filteredCities[index]._id} value={filteredCities[index].name} style={style}>
+                            <button className='buttonCity' onClick={() => handleSelectCity(filteredCities[index].name)} key={filteredCities[index]._id} value={filteredCities[index].name}>
                                 {filteredCities[index].name}
                             </button>
                         )}

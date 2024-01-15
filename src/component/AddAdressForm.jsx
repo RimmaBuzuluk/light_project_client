@@ -49,7 +49,7 @@ function AddAdressForm({onSubmit}) {
                     <input type="text" value={address} name="address" onChange={(e) => setAddress(e.target.value)} />
                 </div>
                 <div className="input_adress" >
-                    <div className="title_input_adress_place title_adress">Address place</div>
+                    <div className=" title_adress">Address place</div>
                     <input type="text" value={addressPlace} name="addressPlace" onChange={(e) => setAddressPlace(e.target.value)} />
                 </div>
                 <SerchCity onSelectCity={handleSelectCity} setSelectedCity={setSelectedCity} />

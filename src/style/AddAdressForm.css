@@ -5,7 +5,7 @@
     
     
     width: 1000px;
-    height: 500px;
+    height: 650px;
     margin-top: 20px;
 
 
@@ -73,32 +73,26 @@ input{
 
 .citiesList{
     width: 200px;
-    background-color: yellow;
-}
-
-.cityList{
-    background-color: yellowgreen;
-    color: violet;
 }
 
 @media (max-width:1200px){
     .addAdressForm{
         width: 900px;
-        height: 400px;
+        height: 650px;
     }
 }
 
 @media (max-width:992px){
     .addAdressForm{
         width: 750px;
-        height: 400px;
+        height: 650px;
     }
 }
 
 @media (max-width:768px){
     .addAdressForm{
         width: 450px;
-        height: 350px;
+        height: 575px;
     }
     input{
         width:300px;
@@ -113,12 +107,25 @@ input{
         height: 50px;
         font-size: 20px;
     } 
+    input{
+        font-size: 15px;
+    }
 }
 
 @media (max-width:480px){
     .addAdressForm{
         width: 300px;
-        height: 370px;
+        height: 500px;
+    }
+    
+    .input_adress{
+        height: 50px;
+    }
+
+    .title_adress{
+        width: 75px;
+        height: 12px;
+        font-size: 12px;
     }
     input{
         width:150px;
@@ -129,8 +136,9 @@ input{
     }
     .buttonAddAdress{
         margin-top: 10px;
-        width: 200px;
-        height: 50px;
-        font-size: 20px;
+        width: 100px;
+        height: 25px;
+        font-size: 10px;
     } 
+    
 }
