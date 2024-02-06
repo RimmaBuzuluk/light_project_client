@@ -21,9 +21,9 @@ function Header() {
         <Link to="/" className='main_item'>Light in your home</Link>
         <div className='header_menu'>
             <Link to="/statistics" className='header_menu__item'>Статистика</Link>
-            <Link className='header_menu__item'>Відгуки</Link>
-            <Link className='header_menu__item'>Статистіка</Link>
-            <Link className='header_menu__item'>Home3</Link>
+            <Link to="/comments" className='header_menu__item'>Відгуки</Link>
+            <Link to="/statistics" className='header_menu__item'>Статистіка</Link>
+            <Link to="/map" className='header_menu__item'>Пункти незламності</Link>
         </div>
         {isAuth? 
         <div>

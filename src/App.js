@@ -11,6 +11,9 @@ import {  fetchAuthMe, selectIsAuth } from './redux/slice/authReduser';
 import AddressItem from './page/AddressItemPage';
 import AddressItemPage from './page/AddressItemPage';
 import Statistics from './page/Statistics';
+import Comments from './page/Comments';
+import Map from './page/Map';
+import MapComponent from './page/Map';
 
 
 function App() {
@@ -35,6 +38,8 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/address/:id' element={<AddressItemPage />} />
             <Route path='/statistics' element={<Statistics/>} />
+            <Route path='/map' element={<MapComponent/>} />
+            <Route path='/comments' element={<Comments/>} />
           </Routes>
         </Container>
       </Router>
