@@ -1,69 +1,78 @@
-.header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-.header_menu{
-    display: flex;
-    align-items: center;
-
+.header_menu {
+	display: flex;
+	align-items: center;
 }
 
-.main_item{
-    font-size: 200%;
-    font-weight: 600;
-    color:coral;
+.main_item {
+	font-size: 200%;
+	font-weight: 600;
+	color: coral;
 }
 
-.header_menu__item{
-    font-size: 200%;
+.header_menu__item {
+	font-size: 200%;
 }
 
-.header_menu__item:not(:last-child){
-    margin-right: 50px;
-
+.header_menu__item:not(:last-child) {
+	margin-right: 50px;
 }
 
-.buttExit{
-    width: 75px;
-    height: 25px;
-    border-radius: 50px;
-    margin-left: 20px;
-    font-size: 80%;
-    background-color: #fff;
+.buttExit {
+	width: 75px;
+	height: 25px;
+	border-radius: 50px;
+	margin-left: 20px;
+	font-size: 80%;
+	background-color: #fff;
 }
 
-@media (max-width:1200px){
-    .header_menu__item:not(:last-child){
-        margin-right: 20px;
-    }
-    .main_item{
-        font-size: 150%;
-    }
-    .header_menu__item{
-        font-size: 150%;
-    }
+.gumburgerMenu img {
+	width: 25px;
+	height: auto;
 }
 
-@media (max-width:768px){
-    .main_item{
-        font-size: 80%;
-    }
-    .header_menu__item{
-        font-size: 80%;
-    }
-
-    .buttExit{
-        width: 50px;
-        height: 20px;
-        border-radius: 50px;
-        margin-left: 20px;
-    }
+@media (max-width: 1200px) {
+	.header_menu__item:not(:last-child) {
+		margin-right: 20px;
+	}
+	.main_item {
+		font-size: 150%;
+	}
+	.header_menu__item {
+		font-size: 150%;
+	}
 }
 
-@media (max-width:480px){
-    .header_menu{
-        display: none;
-    }
+@media (max-width: 768px) {
+	.main_item {
+		font-size: 80%;
+	}
+	.header_menu__item {
+		font-size: 80%;
+	}
+
+	.buttExit {
+		width: 50px;
+		height: 20px;
+		border-radius: 50px;
+		margin-left: 20px;
+	}
+}
+
+@media (min-width: 481px) {
+	.gumburgerMenu {
+		display: none;
+	}
+}
+
+@media (max-width: 480px) {
+	.header_menu__item:not(:last-child) {
+		display: none;
+	}
 }

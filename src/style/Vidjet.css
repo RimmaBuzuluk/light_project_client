@@ -1,0 +1,18 @@
+.vidjetImg {
+	display: flex;
+	justify-content: space-between;
+}
+
+.vidjetImg img {
+	width: 45%;
+	height: auto;
+}
+
+li img {
+	width: 10%;
+	height: 10%;
+}
+
+.li_textImg {
+	display: flex;
+}
