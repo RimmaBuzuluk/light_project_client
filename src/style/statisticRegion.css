@@ -1,0 +1,134 @@
+.statistic {
+	/* background-color: blueviolet; */
+}
+.regionStatistics {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 50px;
+	height: 100%;
+
+	/* background-color: aquamarine; */
+}
+
+@media screen and (max-width: 830px) {
+	.regionStatistics {
+		flex-direction: column;
+	}
+}
+
+.regionsPercent {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.regionPercent {
+	background-color: yellow;
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+	height: 50px;
+	border-radius: 50px;
+	padding: 0 20px;
+	align-items: center;
+}
+
+@media screen and (max-width: 830px) {
+	.regionPercent {
+		height: 25px;
+	}
+}
+.statistic_img {
+	/* background-color: violet; */
+	display: flex;
+	justify-content: center;
+}
+
+.statistic_img img {
+	width: 50%;
+}
+
+.regionPercent:not(:last-child) {
+	margin-bottom: 10px;
+}
+
+/* //// */
+
+.light__grafic {
+	width: 100%;
+}
+
+table {
+	width: 100%;
+	border-radius: 20px;
+	/* border: 1px solid #f2f2f2; */
+}
+
+.th {
+	font-size: 10px;
+	padding: 0;
+	margin: 0;
+}
+
+.th,
+.main_th,
+.main_td {
+	padding: 8px;
+	text-align: center;
+}
+
+.main_th {
+	background-color: #f2f2f2; /* Колір фону для заголовка стовпця */
+	font-size: 10px;
+}
+
+.main_td {
+	font-size: 10px;
+}
+
+.th {
+	padding: 0;
+}
+
+/* Границі для горизонтальних і вертикальних ліній */
+.th,
+.main_td {
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+}
+
+/* Границі для вертикальних ліній */
+.main_td:first-child {
+	border-left: none; /* Відключаємо границю для першого елемента в рядку */
+}
+
+/* td:not(:first-child) {
+	background-color: blue;
+	display: flex;
+	flex-direction: column;
+} */
+
+/* Адаптивні стилі для ширини екрану менше 830px */
+@media screen and (max-width: 830px) {
+	.timetable {
+		writing-mode: vertical-lr; /* Зміна напрямку тексту на вертикальний */
+		height: 100%; /* Заповнення всього доступного простору по висоті */
+	}
+
+	.th {
+		font-size: 8px;
+		width: 40px;
+	}
+
+	.main_th {
+		writing-mode: horizontal-tb; /* Повернення заголовка стовпця в горизонтальний напрямок */
+		width: 100px; /* Ширина заголовка стовпця для відображення повністю */
+	}
+
+	.main_td {
+		width: auto;
+		font-size: 10px;
+	}
+}

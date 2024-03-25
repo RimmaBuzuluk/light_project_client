@@ -14,8 +14,9 @@
 Середній десктоп: Від 1600px до 1919px.
 Великий десктоп: Від 1920px та більше. */
 
-.App{
-    /* background-color: blanchedalmond; */
-    max-width: 2000px;
-    margin: 0 auto;
+.App {
+	/* background-color: blanchedalmond; */
+	max-width: 2000px;
+	margin: 0 auto;
+	font-family: 'Poppins', sans-serif;
 }

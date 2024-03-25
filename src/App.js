@@ -19,7 +19,6 @@ import Vidjet from './page/Vidjet';
 
 function App() {
 	const dispatch = useDispatch();
-	const isAuth = useSelector(selectIsAuth);
 
 	useEffect(() => {
 		dispatch(fetchAuthMe());
@@ -30,7 +29,7 @@ function App() {
 		axios
 			.get(url)
 			.then(response => {
-				console.log(response.data);
+				// console.log(response.data);
 			})
 			.catch(error => {
 				console.log('сталась помилка');

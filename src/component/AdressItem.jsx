@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../style/AdressItem.css';
 import { useDispatch } from 'react-redux';
 import { fetchRebootAddress, fetchRemoveAddress } from '../redux/slice/adressReduser';
@@ -20,6 +20,13 @@ function AdressItem({ address }) {
 		axios.put(`addresSatus/${_id}`);
 	};
 
+	useEffect(() => {
+		const intervalId = setInterval(() => {
+			rebootAddress();
+		}, 60000);
+		return () => clearInterval(intervalId);
+	}, []);
+
 	return (
 		<div className='adressItem__Block'>
 			<Link to={`address/${_id}`} className='AdressItem'>
@@ -34,8 +41,8 @@ function AdressItem({ address }) {
 					/>
 				</button>
 			</div>
-			<div onClick={rebootAddress} className='blockButt__delete'>
-				<button className='deleteBut'>
+			<div className='blockButt__delete'>
+				<button className='deleteBut' onClick={rebootAddress}>
 					<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeV9uTBv7d06Sdc1TENiUxgHZTyW5AdCUh3aJdYiEU84xERhkGl8m0GDATkuAShVdusq4&usqp=CAU' />
 				</button>
 			</div>

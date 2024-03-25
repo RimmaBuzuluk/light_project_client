@@ -1,17 +1,14 @@
 import React from 'react';
-import "../style/Header.css"
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { logout, selectIsAuth } from '../redux/slice/authReduser';
-
+import '../style/Header.css';
+import RigenStatistic from '../component/regionStatistic';
 
 function Statistics() {
-
-  return (
-    <div className='statistics'>
-        статистика
-    </div>
-  );
+	return (
+		<div className='statistics'>
+			<RigenStatistic />
+			<div>статистика</div>
+		</div>
+	);
 }
 
 export default Statistics;

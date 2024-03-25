@@ -4,19 +4,23 @@
 	align-items: center;
 }
 
+a {
+	text-decoration: none;
+}
+
 .header_menu {
 	display: flex;
 	align-items: center;
 }
 
 .main_item {
-	font-size: 200%;
+	font-size: 25px;
 	font-weight: 600;
 	color: coral;
 }
 
 .header_menu__item {
-	font-size: 200%;
+	font-size: 15px;
 }
 
 .header_menu__item:not(:last-child) {
@@ -33,7 +37,7 @@
 }
 
 .gumburgerMenu img {
-	width: 25px;
+	width: 10px;
 	height: auto;
 }
 
@@ -42,19 +46,19 @@
 		margin-right: 20px;
 	}
 	.main_item {
-		font-size: 150%;
+		font-size: 30px;
 	}
 	.header_menu__item {
-		font-size: 150%;
+		font-size: 15px;
 	}
 }
 
 @media (max-width: 768px) {
 	.main_item {
-		font-size: 80%;
+		font-size: 25px;
 	}
 	.header_menu__item {
-		font-size: 80%;
+		font-size: 10px;
 	}
 
 	.buttExit {
