@@ -6,7 +6,6 @@ function Statistics() {
 	return (
 		<div className='statistics'>
 			<RigenStatistic />
-			<div>статистика</div>
 		</div>
 	);
 }

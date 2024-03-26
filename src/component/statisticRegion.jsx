@@ -1,12 +1,13 @@
 import React from 'react';
 import '../style/statisticRegion.css';
 
-function StatisticRegion() {
+function StatisticRegion({ region }) {
+	console.log(region);
 	return (
-		<div className='regionPercent'>
-			<div>name</div>
+		<button className='regionPercent'>
+			<div>{region.name}</div>
 			<div>50%</div>
-		</div>
+		</button>
 	);
 }
 
