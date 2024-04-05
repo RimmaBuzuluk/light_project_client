@@ -3,7 +3,7 @@ import axios from '../../axios';
 
 export const fetchSchedult = createAsyncThunk('schedult/fetchSchedult', async () => {
 	try {
-		const { data } = await axios.get('/shedule');
+		const { data } = await axios.get('/schedule');
 		return data;
 	} catch (error) {
 		throw Error('Error fetching schedult');

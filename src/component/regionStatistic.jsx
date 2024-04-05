@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../style/statisticRegion.css';
 import KharkivRegion from '../img/unnamed.jpg';
 import StatisticRegion from './statisticRegion';
@@ -9,23 +9,38 @@ import SchdultTable from './SchedultTable';
 
 function RegionStatistic() {
 	const dispatch = useDispatch();
-	// const { items, status } = useSelector(state => state.schedult);
 	const kharkivRegion = useSelector(state => state.region);
-	console.log(kharkivRegion.item);
+	const [selectedRegion, setSelectedRegion] = useState(null);
+	// const [regionSchedult, setRegionSchedult] = useState([]);
+	// const [region, setRegion] = useState([]);
 
 	useEffect(() => {
-		dispatch(fetchSchedult());
 		dispatch(fetchRegion());
 	}, []);
 
-	const weekDay = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+	const handleRegionClick = regionName => {
+		setSelectedRegion(regionName); // Встановлюємо обраний регіон
+	};
+
+	const hendelRegion = (region, schedule) => {
+		// setRegion(region);
+		// console.log('schedule', schedule);
+		// setRegionSchedult(schedule);
+	};
+
+	// console.log('regionSchedult', regionSchedult);
 
 	return (
 		<div className='statistic'>
 			<div className='regionStatistics'>
 				<div className='regionsPercent'>
 					{kharkivRegion.item.map((city, index) => (
-						<StatisticRegion key={index} region={city} />
+						<StatisticRegion
+							key={index}
+							region={city}
+							isSelected={city.name === selectedRegion} // Передача стану виділеного регіону
+							hendelRegion={handleRegionClick}
+						/>
 					))}
 				</div>
 				<div className='statistic_img'>

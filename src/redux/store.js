@@ -6,6 +6,7 @@ import { authReducer } from './slice/authReduser';
 import { cityReducer } from './slice/cityReduser';
 import { schedultReducer } from './slice/schedultReduser';
 import { regionReduser } from './slice/kharkivRegion';
+import { regionSelected } from './slice/selectedRegion';
 
 const rootReducer = combineReducers({
 	address: addressReducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
 	city: cityReducer,
 	schedult: schedultReducer,
 	region: regionReduser,
+	selectedRegion: regionSelected,
 });
 
 export const store = configureStore(
