@@ -27,8 +27,7 @@ function StatisticRegion({ region, isSelected, hendelRegion }) {
 	}, [scheduleNumber]);
 
 	const handleClick = () => {
-		console.log(region.name);
-		dispatch(setSelectedRegion(region.name));
+		dispatch(setSelectedRegion(schedule));
 	};
 
 	return (

@@ -24,18 +24,21 @@ function Header() {
 				Light in your home
 			</Link>
 			<div className='header_menu'>
+				<Link to='/' className='header_menu__item'>
+					Додому
+				</Link>
 				<Link to='/vidjet' className='header_menu__item'>
 					Віджет
 				</Link>
-				<Link to='/comments' className='header_menu__item'>
+				{/* <Link to='/comments' className='header_menu__item'>
 					Відгуки
-				</Link>
+				</Link> */}
 				<Link to='/statistics' className='header_menu__item'>
 					Статистіка
 				</Link>
-				<Link to='/map' className='header_menu__item'>
+				{/* <Link to='/map' className='header_menu__item'>
 					Пункти незламності
-				</Link>
+				</Link> */}
 				{isAuth ? (
 					<div className='header_menu__item'>
 						<button className='buttExit' onClick={() => onClickLogout()}>
