@@ -16,6 +16,7 @@ import Map from './page/Map';
 import MapComponent from './page/Map';
 import axios from './axios';
 import Vidjet from './page/Vidjet';
+import background from './img/photo_2024-04-08_17-00-37.jpg';
 
 function App() {
 	const dispatch = useDispatch();
@@ -37,10 +38,13 @@ function App() {
 	}, []);
 
 	return (
-		<div className='App'>
-			<Router>
-				<Container>
+		<div>
+			<div className='backgroundIMG'>{/* <img src={background} /> */}</div>
+			<div className='App'>
+				<Router>
+					{/* <Container> */}
 					<Header />
+
 					<Routes>
 						<Route path='/' element={<Home />} />
 						<Route path='/registration' element={<Registration />} />
@@ -51,8 +55,9 @@ function App() {
 						<Route path='/comments' element={<Comments />} />
 						<Route path='/vidjet' element={<Vidjet />} />
 					</Routes>
-				</Container>
-			</Router>
+					{/* </Container> */}
+				</Router>
+			</div>
 		</div>
 	);
 }

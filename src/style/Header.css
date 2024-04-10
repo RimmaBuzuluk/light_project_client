@@ -2,11 +2,13 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	font-family: 'Gilroy', sans-serif;
 }
 
-a {
+/* a {
 	text-decoration: none;
-}
+} */
 
 .header_menu {
 	display: flex;
@@ -14,13 +16,19 @@ a {
 }
 
 .main_item {
-	font-size: 25px;
-	font-weight: 600;
-	color: coral;
+	color: #ffe27a;
+	font-size: 39.94px;
+	font-weight: 700;
+	line-height: 45.5px;
+	text-decoration: none;
 }
 
 .header_menu__item {
-	font-size: 15px;
+	font-size: 23.54px;
+	font-weight: 500;
+	line-height: 26.82px;
+	text-decoration: none;
+	color: #fff;
 }
 
 .header_menu__item:not(:last-child) {
@@ -28,12 +36,15 @@ a {
 }
 
 .buttExit {
-	width: 75px;
-	height: 25px;
-	border-radius: 50px;
-	margin-left: 20px;
-	font-size: 80%;
-	background-color: #fff;
+	border-radius: 20px;
+	border: 1px solid #ffe27a;
+	color: #fff;
+	text-decoration: none;
+	font-size: 23.54px;
+	font-weight: 500;
+	line-height: 26px;
+	padding: 10px;
+	background-color: black;
 }
 
 .gumburgerMenu img {
@@ -41,7 +52,7 @@ a {
 	height: auto;
 }
 
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
 	.header_menu__item:not(:last-child) {
 		margin-right: 20px;
 	}
@@ -79,4 +90,4 @@ a {
 	.header_menu__item:not(:last-child) {
 		display: none;
 	}
-}
+} */

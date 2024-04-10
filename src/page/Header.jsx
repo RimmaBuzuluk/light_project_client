@@ -46,11 +46,13 @@ function Header() {
 						</button>
 					</div>
 				) : (
-					<Link to='/registration'>зарееструватися</Link>
+					<Link className='buttExit' to='/registration'>
+						зарееструватися
+					</Link>
 				)}
-				<div className='gumburgerMenu' onClick={shouGumburger}>
+				{/* <div className='gumburgerMenu' onClick={shouGumburger}>
 					<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKMz8CPZPvGcp5TA6AMphHc5EDwF_Gj2-72Q&usqp=CAU' />
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);
