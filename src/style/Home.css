@@ -1,48 +1,69 @@
-.home__name{
-    font-size: 200%;
-    border: 1px solid #000;
-    border-radius: 50px;
-    margin: 20px 0 20px 0;
-    width: 50%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.home__name {
+	font-size: 200%;
+	border: 1px solid #000;
+	border-radius: 50px;
+	margin: 20px 0 20px 0;
+	width: 50%;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.home__addBut{
-    display: flex;
-    justify-content: end;
-    
+.home__addBut {
+	display: flex;
+	justify-content: end;
 }
 
-.formAddAdress{
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
+.home__addBut button {
+	border-radius: 40px;
+	background: linear-gradient(to right, #ffe27a, #ffd232);
+	width: 30%;
+	height: 54px;
+	font-size: 32px;
 }
 
-@media (max-width:1200px){
-    .home__name{
-        width: 40%;
-        height: 50px;
-        font-size: 150%;
-    }
+.formAddAdress {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-@media (max-width:768px){
-    .home__name{
-        width: 30%;
-        font-size:120%;
-    }
+.deleteBut {
+	width: 60px;
+	height: 60px;
+	background-color: rgba(128, 128, 128, 0); /* Прозорий сірий колір з прозорістю 0.5 (значення від 0 до 1) */
+	border: 1px solid #ffd232; /* Видаліть бордер, якщо він не потрібен */
+	border-radius: 50px;
+	/* padding: 5px; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-@media (max-width:480px){
-    .home__name{
-        width: auto;
-        font-size:70%;
-        height: 20px;
-    }
+.deleteBut img {
+	width: 36px;
+	height: 36px;
+}
+@media (max-width: 1200px) {
+	.home__name {
+		width: 40%;
+		height: 50px;
+		font-size: 150%;
+	}
 }
 
+@media (max-width: 768px) {
+	.home__name {
+		width: 30%;
+		font-size: 120%;
+	}
+}
 
+@media (max-width: 480px) {
+	.home__name {
+		width: auto;
+		font-size: 70%;
+		height: 20px;
+	}
+}

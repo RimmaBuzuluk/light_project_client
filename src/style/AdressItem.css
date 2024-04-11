@@ -1,56 +1,74 @@
-.adressItem__Block{
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 0 10px 0;
+.adressItem__Block {
+	display: flex;
+	justify-content: space-between;
+	margin: 10px 0 10px 0;
 }
 
-.AdressItem{
-    height: 50px;
-    display: flex;
-    align-items: center;
-    border: 3px solid coral; 
-    border-radius: 50px;
-    padding: 0 20px 0 10px;
-    width: 100%;
-    justify-content: space-between;
-}    
-
-
-.lightBlock{
-    width: 70px;
-    height: 45px;
-    border-radius: 50px;
-    font-size: 25px;
-    color: #fff;
-    border: 1px solid #000; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.AdressItem {
+	height: 50px;
+	display: flex;
+	align-items: center;
+	border: 3px solid #fff;
+	border-radius: 50px;
+	padding: 0 3px 0 10px;
+	width: 100%;
+	justify-content: space-between;
+	font-size: 25px;
+	color: #ffd232;
+	text-decoration: none;
+	margin-right: 20px;
 }
 
-.lightFalse{
-    
-    background-color: red;
+.lightBlock {
+	width: auto;
+	height: 45px;
+	border-radius: 50px;
+	color: #000;
+	text-decoration: none;
+	padding: 0 20px;
+	/* border: 1px solid #000;
+	display: flex;
+	justify-content: center;
+	align-items: center; */
 }
 
-.lightTrue{
-    background-color: yellowgreen;
+.lightBlockText {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-
-.deleteBut{
-    height: 50px;
-    width: 50px;
-    margin-left: 10px;
-    border-radius: 50px;
-    background-color: #fff;
+.lightFalse {
+	background-color: red;
 }
 
-.deleteBut img{
-    width: 20px;
+.lightTrue {
+	background-color: #b7ff70;
+	display: flex;
+	/* justify-content: center;
+	align-items: center; */
+	/* width: auto; */
 }
 
-@media (max-width:768px){
+.deleteBut {
+	/* height: 50px;
+	width: 50px;
+	margin-left: 10px;
+	border-radius: 50px; */
+
+	/* background-color: #fff; */
+}
+
+.blockButt__delete:not(:last-child) {
+	margin-right: 20px;
+	/* background-color: aqua; */
+}
+
+/* .deleteBut img {
+	width: 20px;
+} */
+
+/* @media (max-width:768px){
     .lightBlock{
         height: 35px;
         font-size: 20px;
@@ -83,4 +101,4 @@
     .deleteBut img{
         width: 15px;
     }
-}
+} */
