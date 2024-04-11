@@ -1,144 +1,149 @@
-.addAdressForm{
-    background-color: #fff;
-    border: 1px solid #000;
-    border-radius: 50px;
-    
-    
-    width: 1000px;
-    height: 650px;
-    margin-top: 20px;
+.addAdressForm {
+	background-color: #000;
+	border: 3px solid #ffe27a;
+	border-radius: 50px;
 
+	width: 1000px;
+	height: 650px;
+	margin-top: 20px;
 
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
- .addAdressFormTitle{
-    font-size: 20px;
-    margin-top: 10px;
+.addAdressFormTitle {
+	font-size: 20px;
+	margin-top: 10px;
+
+	color: #ffe27a;
+	font-size: 40px;
 }
 
-.input_block{
-    display: block;
-    margin-top: 20px;
+.input_block {
+	display: block;
+	margin-top: 20px;
 }
 
-.input_adress{
-    display: flex;
-    align-items: center;
+.input_adress {
+	display: flex;
+	align-items: center;
 }
 
-.title_adress{
-    width: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    margin-top: 20px;
-    margin-right: 10px;
-    justify-content: center;
-    height: 50px;
-    font-size: 15px;
+.title_adress {
+	width: 100px;
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	margin-top: 20px;
+	margin-right: 10px;
+	justify-content: center;
+	height: 50px;
+	font-size: 28px;
+	color: #ffd232;
+	font-weight: 500;
 }
 
-input{
-    display: block;
-    width:600px;
-    margin-top: 20px;
-    height: 50px;
-    font-size: 20px;
-    border-radius: 50px;
-    padding-left: 10px;
+input {
+	display: block;
+	width: 600px;
+	margin-top: 20px;
+	height: 50px;
+	font-size: 20px;
+	border-radius: 50px;
+	padding-left: 10px;
+	background-color: #000;
+	border: 2px solid #fff;
+	color: #fff;
 }
 
-.buttonAddAdress{
-    margin-top: 20px;
+.buttonAddAdress {
+	margin-top: 20px;
 
-    width: 300px;
-    height: 70px;
-    border-radius: 50px;
-    font-size: 30px;
+	width: 300px;
+	height: 50px;
+	border-radius: 50px;
+	font-size: 30px;
 
-    background-color: coral;
-    color: #fff;
-} 
-
-.selectedCity{
-    width: 100%;
-    margin-top: 10px;
-    height: 50px;
-
+	background: linear-gradient(to right, #ffe27a, #ffd232);
+	color: #000;
+	font-weight: 700;
 }
 
-.citiesList{
-    width: 200px;
+.selectedCity {
+	width: 100%;
+	margin-top: 10px;
+	height: 50px;
 }
 
-@media (max-width:1200px){
-    .addAdressForm{
-        width: 900px;
-        height: 650px;
-    }
+.citiesList {
+	width: 200px;
 }
 
-@media (max-width:992px){
-    .addAdressForm{
-        width: 750px;
-        height: 650px;
-    }
+@media (max-width: 1200px) {
+	.addAdressForm {
+		width: 900px;
+		height: 650px;
+	}
 }
 
-@media (max-width:768px){
-    .addAdressForm{
-        width: 450px;
-        height: 575px;
-    }
-    input{
-        width:300px;
-        height: 30px;
-        font-size: 20px;
-        border-radius: 50px;
-        padding-left: 10px;
-    }
-    .buttonAddAdress{
-        margin-top: 15px;
-        width: 200px;
-        height: 50px;
-        font-size: 20px;
-    } 
-    input{
-        font-size: 15px;
-    }
+@media (max-width: 992px) {
+	.addAdressForm {
+		width: 750px;
+		height: 650px;
+	}
 }
 
-@media (max-width:480px){
-    .addAdressForm{
-        width: 300px;
-        height: 500px;
-    }
-    
-    .input_adress{
-        height: 50px;
-    }
+@media (max-width: 768px) {
+	.addAdressForm {
+		width: 450px;
+		height: 575px;
+	}
+	input {
+		width: 300px;
+		height: 30px;
+		font-size: 20px;
+		border-radius: 50px;
+		padding-left: 10px;
+	}
+	.buttonAddAdress {
+		margin-top: 15px;
+		width: 200px;
+		height: 50px;
+		font-size: 20px;
+	}
+	input {
+		font-size: 15px;
+	}
+}
 
-    .title_adress{
-        width: 75px;
-        height: 12px;
-        font-size: 12px;
-    }
-    input{
-        width:150px;
-        height: 25px;
-        font-size: 20px;
-        border-radius: 50px;
-        padding-left: 10px;
-    }
-    .buttonAddAdress{
-        margin-top: 10px;
-        width: 100px;
-        height: 25px;
-        font-size: 10px;
-    } 
-    
+@media (max-width: 480px) {
+	.addAdressForm {
+		width: 300px;
+		height: 500px;
+	}
+
+	.input_adress {
+		height: 50px;
+	}
+
+	.title_adress {
+		width: 75px;
+		height: 12px;
+		font-size: 12px;
+	}
+	input {
+		width: 150px;
+		height: 25px;
+		font-size: 20px;
+		border-radius: 50px;
+		padding-left: 10px;
+	}
+	.buttonAddAdress {
+		margin-top: 10px;
+		width: 100px;
+		height: 25px;
+		font-size: 10px;
+	}
 }

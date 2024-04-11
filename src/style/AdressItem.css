@@ -19,6 +19,12 @@
 	margin-right: 20px;
 }
 
+.lightStatus {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .lightBlock {
 	width: auto;
 	height: 45px;
@@ -39,7 +45,10 @@
 }
 
 .lightFalse {
-	background-color: red;
+	background-color: #ff7970;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .lightTrue {

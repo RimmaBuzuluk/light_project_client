@@ -1,3 +1,7 @@
+.vidjet {
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
 .vidjetImg {
 	display: flex;
 	justify-content: space-between;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../style/statisticRegion.css';
-import KharkivRegion from '../img/unnamed.jpg';
+import KharkivRegion from '../img/unnamed-removebg-preview.png';
 import StatisticRegion from './statisticRegion';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchSchedult } from '../redux/slice/schedultReduser';

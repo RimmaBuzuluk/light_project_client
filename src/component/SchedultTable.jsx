@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import '../style/statisticRegion.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchSchedult } from '../redux/slice/schedultReduser';
-
+import lightHappyIcon from '.././img/1669891870_4-indasil-club-p-lampochka-risunok-dlya-detei-vkontakte-5-removebg-preview.png';
+import lightSadIcon from '.././img/depositphotos_64629805-stock-illustration-cartoon-sad-light-buld-removebg-preview.png';
 function SchdultTable() {
 	const dispatch = useDispatch();
 	// const { items, status } = useSelector(state => state.schedult);
@@ -30,8 +31,8 @@ function SchdultTable() {
 			) : (
 				<>
 					<div className='schedultInformItem'>
-						<div className='schedultGroup'>group {selectedRegion.group}</div>
-						<div className='schedultPersent'>{selectedRegion.persent}</div>
+						<div className='schedultGroup'>GROUP {selectedRegion.group}</div>
+						<div className='schedultPersent'>PERSENT {Math.round(selectedRegion.persent)}</div>
 					</div>
 					<table className='timetable'>
 						<thead>
@@ -49,7 +50,7 @@ function SchdultTable() {
 								<tr key={index}>
 									<td>{day}</td>
 									{week[day.toLowerCase()][0].timeStatus.map((time, timeIndex) => (
-										<td key={timeIndex}>{time.status ? '+' : '-'}</td>
+										<td key={timeIndex}>{time.status ? <img src={lightHappyIcon} /> : <img src={lightSadIcon} />}</td>
 									))}
 								</tr>
 							))}
