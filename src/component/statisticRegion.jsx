@@ -29,6 +29,9 @@ function StatisticRegion({ region, isSelected, hendelRegion }) {
 	const handleClick = () => {
 		dispatch(setSelectedRegion(schedule));
 	};
+	let persent;
+
+	persent = Math.round(schedule.persent);
 
 	return (
 		<button
@@ -37,7 +40,7 @@ function StatisticRegion({ region, isSelected, hendelRegion }) {
 		>
 			<div>{region.name}</div>
 			{schedule ? (
-				<div>{schedule.persent}</div>
+				<div>{persent}%</div>
 			) : (
 				<div>Loading...</div> // Відображаємо "Loading..." поки дані завантажуються
 			)}
